@@ -8,5 +8,5 @@ I made the Layout with css/Sass (no framework) and i used the Sass Cli to transp
 
 
 ## Demo
-you can see running
+you can see it running
 [here](https://kscorrales.github.io/front-end-test/index.html)
