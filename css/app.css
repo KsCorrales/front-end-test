@@ -1,0 +1,446 @@
+p, h2, h3 {
+  margin: 0;
+}
+
+body {
+  font-family: "Lato";
+  letter-spacing: 1px;
+}
+
+div.content div.voting-container .voting-box .voting-information .vote-options .downvote, div.content div.voting-container .voting-box .voting-information .vote-options .upvote, .main div.container .newest-voting div.vote-box .dislike, .main div.container .newest-voting div.vote-box .like {
+  border: 1px solid transparent;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options .downvote:hover, div.content div.voting-container .voting-box .voting-information .vote-options .upvote:hover, .main div.container .newest-voting div.vote-box .dislike:hover, .main div.container .newest-voting div.vote-box .like:hover {
+  border: 1px solid #fff;
+}
+
+header {
+  width: 1170px;
+  margin: 0 auto;
+  display: grid;
+  padding: 1em 0;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  position: relative;
+}
+header h1 {
+  color: #fff;
+}
+header div.right nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+header div.right nav ul li {
+  margin-right: 28px;
+}
+header div.right nav ul li:last-child {
+  margin-right: 0;
+}
+header div.right nav ul li a {
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+}
+
+.main {
+  background: url(../images/pope.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.main .top-shadow {
+  height: 7em;
+  background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.5));
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+}
+.main div.container {
+  position: relative;
+  width: 1170px;
+  margin: 5em auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.main div.container .newest-voting {
+  color: #ffffff;
+  background: rgba(120, 120, 120, 0.6);
+  font-size: 1.2em;
+  font-family: "Lato Light";
+  position: relative;
+  z-index: 2;
+}
+.main div.container .newest-voting div.wrapper {
+  padding: 25px;
+}
+.main div.container .newest-voting h2.title {
+  font-size: 4em;
+}
+.main div.container .newest-voting p.description {
+  font-size: 1.2em;
+  margin-top: 1.5em;
+  letter-spacing: 1px;
+}
+.main div.container .newest-voting div.information {
+  margin-top: 25px;
+}
+.main div.container .newest-voting div.information a {
+  color: #fff;
+}
+.main div.container .newest-voting h3.vote-box-title {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+.main div.container .newest-voting div.vote-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 2em;
+  text-align: center;
+}
+.main div.container .newest-voting div.vote-box .like {
+  padding: 0.5em;
+  background: rgba(28, 187, 180, 0.9);
+  cursor: pointer;
+}
+.main div.container .newest-voting div.vote-box .dislike {
+  padding: 0.5em;
+  background: rgba(255, 173, 29, 0.9);
+  cursor: pointer;
+}
+.main .blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(../images/pope.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: blur(10px);
+  transition: filter 0.5s ease;
+  backface-visibility: hidden;
+}
+.main div.closing {
+  display: flex;
+}
+.main div.closing .remaining, .main div.closing .progress {
+  padding: 1.2em;
+}
+.main div.closing .progress {
+  width: 30%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(120, 120, 120, 0.4));
+  text-align: right;
+  color: #fff;
+}
+.main div.closing .remaining {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+.main div.closing .remaining:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  border-left: 10px solid rgba(120, 120, 120, 0.6);
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 10px solid transparent;
+}
+
+div.content {
+  font-family: "Lato Light";
+  width: 1170px;
+  margin: 4em auto;
+}
+div.content h2 {
+  font-size: 3em;
+}
+div.content .panel {
+  background: #EBEBEB;
+  padding: 1em 1.5em;
+  display: grid;
+  grid-template-columns: 0.3fr 0.9fr 0.1fr;
+  grid-gap: 15px;
+  align-items: center;
+  font-size: 1.1em;
+  margin-bottom: 4em;
+}
+div.content .panel .title {
+  text-align: center;
+  font-size: 1.5em;
+}
+div.content .panel .title .strong {
+  font-family: "Lato Bold";
+  font-size: 1.7em;
+}
+div.content .panel .message {
+  line-height: 1.75;
+  font-size: 1.1em;
+}
+div.content .panel .close {
+  text-align: right;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: grey;
+}
+div.content div.voting-container {
+  margin: 4em 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr 1fr);
+  grid-gap: 2em;
+}
+div.content div.voting-container .voting-box {
+  background: #f1f1f1;
+  min-height: 600px;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+div.content div.voting-container .voting-box .voting-information {
+  position: absolute;
+  bottom: 15%;
+  padding: 0 3.5em;
+  z-index: 1;
+  color: #fff;
+}
+div.content div.voting-container .voting-box .voting-information .voting-status {
+  position: absolute;
+  left: 0;
+  top: 5%;
+  padding: 0.8em;
+  margin-right: 1em;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+div.content div.voting-container .voting-box .voting-information .voting-status.up {
+  background: #1CBBB4;
+}
+div.content div.voting-container .voting-box .voting-information .voting-status.down {
+  background: #FFAD1D;
+}
+div.content div.voting-container .voting-box .voting-information .name {
+  font-family: "Lato Bold";
+  font-size: 2.5em;
+}
+div.content div.voting-container .voting-box .voting-information .description {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options {
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options .downvote, div.content div.voting-container .voting-box .voting-information .vote-options .upvote {
+  padding: 0.8em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options .upvote {
+  background: #1CBBB4;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options .downvote {
+  background: #FFAD1D;
+}
+div.content div.voting-container .voting-box .voting-information .vote-options .vote-now {
+  border: 1px solid #fff;
+  padding: 0.8em;
+  cursor: pointer;
+}
+div.content div.voting-container .voting-box .votes-progress {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  z-index: 1;
+}
+div.content div.voting-container .voting-box .votes-progress .remaining, div.content div.voting-container .voting-box .votes-progress .progress-bar {
+  height: 3em;
+}
+div.content div.voting-container .voting-box .votes-progress .progress-bar {
+  width: 30%;
+  background: rgba(28, 187, 180, 0.75);
+}
+div.content div.voting-container .voting-box .votes-progress .remaining {
+  flex: 1;
+  background: rgba(255, 173, 29, 0.75);
+  position: relative;
+}
+div.content div.voting-container .voting-box .votes-progress .downvotes-percentage, div.content div.voting-container .voting-box .votes-progress .upvotes-percentage {
+  position: absolute;
+  font-size: 1.5em;
+  color: #fff;
+  top: 20%;
+}
+div.content div.voting-container .voting-box .votes-progress .upvotes-percentage {
+  left: 2%;
+}
+div.content div.voting-container .voting-box .votes-progress .downvotes-percentage {
+  right: 2%;
+}
+div.content div.voting-container .voting-box .voting-box-shadow {
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent);
+  height: 80%;
+  width: 100%;
+  bottom: 0;
+}
+div.content div.submit-name-container {
+  display: grid;
+  grid-template-columns: repeat(1, 2fr 1fr);
+  grid-gap: 1em;
+  align-items: center;
+  background-image: url(../images/submit-name-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+div.content div.submit-name-container .text {
+  font-size: 2em;
+}
+div.content div.submit-name-container .submit {
+  text-align: right;
+}
+div.content div.submit-name-container .submit button {
+  background: no-repeat;
+  border: 2px solid #000;
+  padding: 1em 3em;
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+div.content div.submit-name-container .submit button:focus {
+  outline: none;
+}
+div.content div.line-divider {
+  border-bottom: 1px dashed #c1c1c1;
+  margin-bottom: 2em;
+}
+div.content footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  align-items: center;
+  color: grey;
+}
+div.content footer a {
+  color: grey;
+  text-decoration: none;
+  margin-right: 1.2em;
+}
+div.content footer a:last-child {
+  margin-right: none;
+}
+div.content footer i {
+  font-size: 2em;
+  color: grey;
+}
+div.content footer div.right {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+  header, .main > div.container, div.content {
+    width: 100%;
+  }
+
+  header {
+    grid-template-columns: 0.5fr 1.2fr;
+  }
+  header .left, header .right {
+    padding: 1.5em;
+  }
+
+  div.content h2 {
+    padding-left: 0.5em;
+  }
+  div.content div.panel p.title {
+    font-size: 1em;
+  }
+  div.content div.panel p.title .strong {
+    font-size: 1.5em;
+  }
+  div.content div.panel .message {
+    font-size: 1em;
+  }
+}
+/* Medium devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+  header, .main > div.container, div.content {
+    width: 100%;
+  }
+
+  header {
+    padding: 0;
+    grid-template-columns: 1fr 1.5fr;
+  }
+  header div.left {
+    text-align: center;
+  }
+  header div.right nav ul {
+    padding: 0;
+  }
+  header div.right nav ul li {
+    margin-right: 15px;
+  }
+  header div.right nav ul li a {
+    font-size: 1em;
+  }
+  header div.right nav ul li:last-child {
+    display: none;
+  }
+
+  div.main div.container {
+    margin: 3em auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  div.content h2 {
+    padding-left: 0.1em;
+  }
+  div.content div.panel p.title {
+    font-size: 0.9em;
+  }
+  div.content div.panel p.title .strong {
+    font-size: 1.2em;
+  }
+  div.content div.panel .message {
+    font-size: 0.9em;
+  }
+  div.content div.voting-container {
+    grid-template-columns: 1fr;
+  }
+  div.content div.submit-name-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  div.content div.submit-name-container .text {
+    font-size: 1.5em;
+  }
+  div.content div.submit-name-container .submit button {
+    padding: 1em 2em;
+    font-size: 1.1em;
+  }
+  div.content footer .left {
+    margin-left: 1em;
+    line-height: 1.5;
+  }
+}
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  div.main div.container {
+    margin: 3em auto;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */

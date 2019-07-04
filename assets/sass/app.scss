@@ -1,0 +1,561 @@
+$containerWrap: 1170px;
+$containerPadding: 0 6rem;
+
+p, h2, h3{
+	margin: 0;
+}
+
+body {
+	font-family: 'Lato';
+	letter-spacing: 1px;
+}
+
+// For global use
+%vote-buttons-hover {
+	border: 1px solid transparent;
+
+	&:hover {
+		border: 1px solid #fff
+	}
+}
+
+// HEADER STYLES
+header {
+	width: $containerWrap;
+	margin: 0 auto;
+	display: grid;
+	padding: 1em 0;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    position:relative;
+
+    h1 {color: #fff;}
+
+    div.right {
+    	nav {
+    		ul {
+    			list-style: none;
+    			display: flex;
+    			justify-content: flex-end;
+
+    			li {
+    				margin-right: 28px;
+
+    				&:last-child {
+    					margin-right: 0;
+    				}
+
+    				a {
+    					color: #fff;
+    					font-size: 1.2em;
+    					text-decoration: none;
+    				}
+    			}
+    		}
+    	}
+    }
+}
+
+// COVER / FRONT PAGE STYLES
+.main {
+    background: url(../images/pope.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	position:relative;
+
+	.top-shadow {
+	    height: 7em;
+	    background: linear-gradient(0deg, transparent, rgba(0,0,0,0.5));
+	    position: absolute;
+	    top: 0;
+	    z-index: 0;
+	    width: 100%;
+	}
+
+
+	div.container {
+		position: relative;
+		width: $containerWrap;
+		margin: 5em auto;
+		display: grid;
+   		grid-template-columns: 1fr 1fr;
+
+   		.newest-voting {
+			color: #ffffff;
+			background: rgba(120, 120, 120, 0.6);
+	    	font-size: 1.2em;
+	    	font-family: 'Lato Light';
+	    	position: relative;
+	    	z-index: 2;
+
+	    	div.wrapper {
+	    		padding: 25px;
+	    	}
+
+	    	h2.title {
+	    		font-size: 4em
+	    	}
+
+	    	p.description {
+	    		font-size: 1.2em;
+			    margin-top: 1.5em;
+			    letter-spacing: 1px;
+	    	}
+
+	    	div.information {
+	    		margin-top: 25px;
+	    		a {color: #fff;}
+	    	}
+
+	    	h3.vote-box-title {
+	    		margin-top: 35px;
+	    		margin-bottom: 10px;
+	    	}
+
+	    	div.vote-box {
+	    		display: grid;
+	    		grid-template-columns: 1fr 1fr;
+	    		font-size: 2em;
+	    		text-align: center;
+
+	    		.like {
+	    			padding: 0.5em;
+	    			background: rgba(28, 187, 180, 0.9);
+	    			cursor: pointer;
+	    			@extend %vote-buttons-hover;
+	    		}
+
+	    		.dislike {
+	    			padding: 0.5em;
+	    			background: rgba(255, 173, 29, 0.9);
+	    			cursor: pointer;
+	    			@extend %vote-buttons-hover;
+	    		}
+	    	}
+		}
+	}
+
+	.blur {
+		position: absolute;
+	    top: 0;
+	    left: 0;
+	    width: 50%;
+	    height: 100%;
+	    background-image: url(../images/pope.png);
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-attachment: fixed;
+	    background-size: cover;
+	    filter: blur(10px);
+	    transition: filter 0.5s ease;
+	    backface-visibility: hidden;
+	}
+
+	div.closing {
+		display: flex;
+		
+
+		%closing-progress-size {
+		    padding: 1.2em;
+		}
+
+		.progress {
+			@extend %closing-progress-size;
+			width: 30%;
+	    	background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(120, 120, 120, 0.4));
+	    	text-align: right;
+	    	color: #fff;
+	    }
+
+		.remaining {
+			@extend %closing-progress-size;
+			flex: 1;
+			background: rgba(255, 255, 255, .5);
+			position:relative;
+
+			&:before {
+	    	    content: "";
+			    position: absolute;
+			    left: 0;
+			    border-left: 10px solid rgba(120, 120, 120, 0.6);
+			    border-right: 10px solid transparent;
+			    border-bottom: 10px solid transparent;
+			    border-top: 10px solid transparent;
+	    	}
+		}
+	}
+}
+
+// PAGE CONTENT
+div.content {
+	font-family: "Lato Light";
+	width: $containerWrap;
+    margin: 4em auto;
+
+    h2 {
+    	font-size: 3em;
+    }
+
+    .panel {
+    	background: #EBEBEB;
+    	padding: 1em 1.5em;
+    	display: grid;
+    	grid-template-columns: 0.3fr 0.9fr 0.1fr;
+    	grid-gap: 15px;
+    	align-items: center;
+    	font-size: 1.1em;
+    	margin-bottom: 4em;
+
+    	.title {
+    		text-align: center;
+    		font-size: 1.5em;
+
+    		.strong {
+	    		font-family: 'Lato Bold';
+	    		font-size: 1.7em;
+	    	}
+    	}
+
+    	.message {
+    		line-height: 1.75;
+    		font-size: 1.1em;
+    	}
+
+    	.close {
+    		text-align: right;
+    		font-size: 1.5em;
+    		cursor: pointer;
+    		color: grey;
+    	}
+    }
+
+    div.voting-container {
+    	margin: 4em 0;
+    	display: grid;
+    	grid-template-columns: repeat(1, 1fr 1fr);
+    	grid-gap: 2em;
+
+    	.voting-box {
+    		background: #f1f1f1;
+    		min-height: 600px;
+		    position: relative;
+		    background-size: cover;
+    		background-repeat: no-repeat;
+
+		    .voting-information {
+				position: absolute;
+   				bottom: 15%;
+   				padding: 0 3.5em;
+   				z-index: 1;
+   				color: #fff;
+
+		    	.voting-status {
+		    		position: absolute;
+				    left: 0;
+				    top: 5%;
+				    padding: 0.8em;
+				    margin-right: 1em;
+				    cursor: pointer;
+				    border: 1px solid transparent;
+
+				    &.up {
+						background: #1CBBB4;
+					}
+
+					&.down {
+						background: #FFAD1D;
+					}
+		    	}
+
+   				.name {
+   					font-family: 'Lato Bold';
+    				font-size: 2.5em;
+   				}
+
+   				.description {
+   					margin-top: 1em;
+    				font-size: 1.2em;
+   				}
+
+   				.vote-options {
+   					margin-top: 1.5em;
+				    display: flex;
+				    align-items: center;
+
+				    %vote-button-styles {
+					    padding: 0.8em;
+					    margin-right: 1em;
+					    cursor: pointer;
+					    @extend %vote-buttons-hover;
+					}
+
+					.upvote {
+						@extend %vote-button-styles;
+						background: #1CBBB4;
+					}
+
+					.downvote {
+						@extend %vote-button-styles;
+						background: #FFAD1D;
+					}
+
+					.vote-now {
+						border: 1px solid #fff;
+					    padding: 0.8em;
+					    cursor: pointer;
+					}
+   				}
+		    }
+
+		    .votes-progress {
+		    	position: absolute;
+			    bottom: 0;
+			    display: flex;
+			    width: 100%;
+			    z-index: 1;
+
+			    %voting-progress-height {
+			    	height: 3em;
+			    }
+
+			    .progress-bar {
+			    	@extend %voting-progress-height;
+			    	width: 30%;
+	    			background: rgba(28, 187, 180, .75);
+			    }
+
+			    .remaining {
+			    	@extend %voting-progress-height;
+			    	flex: 1;
+					background: rgba(255, 173, 29, .75);
+					position:relative;
+			    }
+
+			    %percentage-styles {
+			    	position: absolute;
+				    font-size: 1.5em;
+				    color: #fff;
+				    top: 20%;
+			    }
+
+			    .upvotes-percentage {
+			    	@extend %percentage-styles;
+				    left: 2%;
+				    
+			    }
+
+			    .downvotes-percentage {
+			    	@extend %percentage-styles;
+				    right: 2%;
+			    }
+		    }
+
+		    .voting-box-shadow {
+		    	position: absolute;
+			    background: linear-gradient(0deg, rgba(0, 0, 0, 0.85), transparent);
+			    height: 80%;
+			    width: 100%;
+			    bottom: 0;
+		    }
+    	}
+    }
+
+    //SUBMIT NAME SECTION
+    div.submit-name-container {
+    	display: grid;
+	    grid-template-columns: repeat(1, 2fr 1fr);
+	    grid-gap: 1em;
+	    align-items: center;
+	    background-image: url(../images/submit-name-bg.png);
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	    padding: 2em;
+	    margin-bottom: 2em;
+
+	    .text {
+	    	font-size: 2em;
+	    }
+
+	    .submit {
+	    	text-align: right;
+
+	    	button {
+	    		background: no-repeat;
+			    border: 2px solid #000;
+			    padding: 1em 3em;
+			    font-size: 1.2em;
+			    font-weight: bold;
+			    cursor: pointer;
+
+			    &:focus {
+			    	 outline: none;
+			    }
+	    	}
+	    }
+    }
+
+    div.line-divider{border-bottom: 1px dashed #c1c1c1; margin-bottom: 2em;}
+
+    footer {
+    	display: grid;
+	    grid-template-columns: 1fr 1fr;
+	    grid-gap: 2em;
+	    align-items: center;
+	    color: grey;
+
+	    a {
+	    	color: grey;
+	    	text-decoration: none;
+	    	margin-right: 1.2em;
+
+	    	&:last-child {
+	    		margin-right: none;
+	    	}
+	    }
+
+	    i {font-size: 2em; color:grey;}
+
+	    div.right {
+	    	align-items: center;
+		    display: flex;
+		    justify-content: flex-end;
+	    }
+    }
+}
+
+//MEDIA QUERIES
+
+/* Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+	header, .main > div.container, div.content {
+		width: 100% ;
+	}
+
+	header {
+		grid-template-columns: 0.5fr 1.2fr;
+
+		.left, .right {
+			padding: 1.5em;
+		}
+	}
+
+	div.content {
+
+		h2 {
+			padding-left: 0.5em;
+		}
+
+		div.panel {
+
+			p.title {
+				font-size: 1em;
+				.strong {
+					font-size: 1.5em;
+				}
+	    	}
+
+	    	.message {
+	    		font-size: 1em;
+	    	}
+		}
+	}
+}
+
+/* Medium devices (desktops, 992px and down) */
+@media (max-width: 992px) {
+
+	header, .main > div.container, div.content {
+		width: 100%;
+	}
+	
+	header {
+		padding: 0;
+		grid-template-columns: 1fr 1.5fr;
+
+		div.left {text-align: center;}
+
+		div.right nav ul {
+			padding: 0;
+
+			li {
+				margin-right: 15px;
+				
+				a {
+					font-size: 1em;
+				}
+
+				&:last-child {
+					display:none;
+				}
+			}
+		}
+	}
+
+	div.main {
+		div.container {
+			margin: 3em auto;
+			display: grid;
+	   		grid-template-columns: 1.5fr 1fr;
+		}
+	}
+
+	div.content {
+
+		h2 {
+			padding-left: 0.1em;
+		}
+
+		div.panel {
+
+			p.title {
+				font-size: 0.9em;
+				.strong {
+					font-size: 1.2em;
+				}
+	    	}
+
+	    	.message {
+	    		font-size: 0.9em;
+	    	}
+		}
+
+		div.voting-container {
+			    grid-template-columns: 1fr;
+		}
+
+		div.submit-name-container {
+			grid-template-columns: 1fr 1fr;
+
+		    .text {
+		    	font-size:1.5em;
+		    }
+
+		    .submit {
+		    	button {
+				    padding: 1em 2em;
+				    font-size: 1.1em;
+		    	}
+		    }
+		}
+
+		footer {
+			.left {
+				margin-left: 1em;
+				line-height: 1.5;
+			}
+		}
+	}
+}
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+
+	div.main {
+		div.container {
+			margin: 3em auto;
+			display: grid;
+	   		grid-template-columns: 1fr;
+		}
+	}
+	
+}
