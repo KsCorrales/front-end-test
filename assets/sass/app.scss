@@ -550,12 +550,96 @@ div.content {
 /* Small devices (tablets, 768px and down) */
 @media (max-width: 768px) {
 
+	header {
+		div.left {
+			h1 {
+				font-size: 1em;
+			}
+		}
+	    div.right {
+	    	nav {
+	    		ul {
+
+	    			li {
+	    				a {
+	    					font-size: 0.8em;
+	    				}
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
 	div.main {
 		div.container {
 			margin: 3em auto;
 			display: grid;
 	   		grid-template-columns: 1fr;
+
+	   		.newest-voting {
+	   			h2.title {
+	    			font-size: 2em;
+	    		}
+
+	    		.description {font-size: 0.8em;}
+	    	}
 		}
 	}
-	
+
+	div.content {
+		.panel {
+	    	padding: 1em ;
+	    	display: grid;
+	    	grid-template-columns: 1fr;
+	    	grid-gap: 10px;
+	    	margin-bottom: 3em;
+
+	    	.title {
+	    		margin-bottom: 1.5em;
+	    		
+	    		.strong {
+		    		font-family: 'Lato Bold';
+		    	}
+	    	}
+
+	    	.close {display: none;}
+	    }
+
+	    //SUBMIT NAME SECTION
+	    div.submit-name-container {
+		    grid-template-columns: repeat(1, 2fr 1fr);
+		    grid-gap: 1em;
+		    padding: 1.5em;
+		    margin-bottom: 2em;
+
+		    .text {
+		    	font-size: 1.2em;
+		    }
+
+		    .submit {
+		    	button {
+				    padding: 1em 2em;
+				    font-size: 0.8em;
+		    	}
+		    }
+		}
+
+		footer {
+		    grid-template-columns: 1fr;
+		    text-align:center;
+
+		    a {
+		    	margin-right: 1em;
+		    }
+
+		    i {font-size: 1.2em;}
+
+		    div.right {
+		    	align-items: center;
+			    display: flex;
+			    justify-content: center;
+		    }
+	    }
+
+	}
 }
