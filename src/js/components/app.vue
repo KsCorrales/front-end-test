@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="main" >
+        <div class="main" :style="{ backgroundImage: 'url(' + newestRuling.picture + ')' }">
             <div class="top-shadow"></div>
             <header>
                 <div class="left">
@@ -125,6 +125,7 @@
                     link: 'http://google.com', // here should be the url of "more information link"
                     upvotes: 5,
                     downvotes: 0,
+                    picture: 'images/pope.png',
                     voted: false,
                 };
 
