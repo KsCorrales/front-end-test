@@ -1,3 +1,5 @@
+@import "normalize.css";
+
 $containerWrap: 1170px;
 $containerPadding: 0 6rem;
 
@@ -58,7 +60,7 @@ header {
 
 // COVER / FRONT PAGE STYLES
 .main {
-    background: url(../images/pope.png);
+    background: url(/images/pope.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	position:relative;
@@ -141,7 +143,7 @@ header {
 	    left: 0;
 	    width: 50%;
 	    height: 100%;
-	    background-image: url(../images/pope.png);
+	    background-image: url(/images/pope.png);
 	    background-position: center;
 	    background-repeat: no-repeat;
 	    background-attachment: fixed;
@@ -366,7 +368,7 @@ div.content {
 	    grid-template-columns: repeat(1, 2fr 1fr);
 	    grid-gap: 1em;
 	    align-items: center;
-	    background-image: url(../images/submit-name-bg.png);
+	    background-image: url(/images/submit-name-bg.png);
 	    background-size: cover;
 	    background-repeat: no-repeat;
 	    padding: 2em;
