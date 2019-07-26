@@ -2,7 +2,7 @@
 This repo was created as a test for a job offer.
 
 ## Description
-I did the Layout with css/Sass, I also used font-awesome for the icons and finally I used the Vue.js framework to do the interaction.
+I made the Layout with css/Sass, I also used font-awesome for the icons and finally I used the Vue.js framework to do the interaction.
 The project was updated, now I'm using webpack for Sass, Js and Vue using their loaders and babel for a right interpretation.
 
 You can see what I used for this refactoring at package.json.
